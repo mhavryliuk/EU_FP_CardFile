@@ -4,17 +4,20 @@ using System.Web.Mvc;
 
 namespace CardFile.Models
 {
+    // Required - поле обязательное для заполнения
+    // Range - диапазон допустимых значений для поля ввода
+
     public class Book
     {
         [HiddenInput(DisplayValue = false)]           // Скрываем поле BookId
         public int BookId { get; set; }               // ISBN книги
 
         [Display(Name = "Название")]
-        [Required]
+        [Required(ErrorMessage = "Поле Название обязательно для заполнения")]
         public string BookTitle { get; set; }         // Название книги
 
         [Display(Name = "Автор")]
-        [Required]
+        [Required(ErrorMessage = "Поле Автор обязательно для заполнения")]
         public string BookAuthor { get; set; }        // Автор книги
 
         [Display(Name = "Соавторы")]
@@ -24,13 +27,14 @@ namespace CardFile.Models
         public string Publisher { get; set; }         // Издательство
 
         [Display(Name = "Год издания")]
+        [Range(1900, 2018, ErrorMessage = "Значение поля Год издания должно попадать в диапазон от 1900 до 2018")]
         public int? YearPublication { get; set; }     // Год издания книги
 
         [Display(Name = "Кол-во страниц")]
         public int? PageCount { get; set; }           // Количество страниц
 
         [Display(Name = "Описание книги")]
-        [Required]
+        [Required(ErrorMessage = "Поле Описание книги обязательно для заполнения")]
         public string Description { get; set; }       // Описание книги
 
         public ICollection<Copy> Copies { get; set; }

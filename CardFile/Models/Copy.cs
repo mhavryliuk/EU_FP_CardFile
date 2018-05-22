@@ -4,6 +4,8 @@ using System.Web.Mvc;
 
 namespace CardFile.Models
 {
+    // Required - поле обязательное для заполнения
+
     public class Copy
     {
         [HiddenInput(DisplayValue = false)]
@@ -14,7 +16,7 @@ namespace CardFile.Models
 
         [Display(Name = "Дата взятия книги")]
         [DataType(DataType.Date)]
-        [Required]
+        [Required(ErrorMessage = "Поле Дата взятия книги обязательно для заполнения")]
         public DateTime BegDate { get; set; }   // Дата взятия книги
 
         [Display(Name = "Дата, когда должна быть возвращена книга")]
