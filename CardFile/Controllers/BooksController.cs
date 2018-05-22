@@ -87,6 +87,7 @@ namespace CardFile.Controllers
         }
 
         // GET: Books/Delete/5
+        [Authorize]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -102,6 +103,7 @@ namespace CardFile.Controllers
         }
 
         // POST: Books/Delete/5
+        [Authorize]
         // Для работы фильтра HandleError в файле web.config нужно добавить <customErrors mode="On"></customErrors>
         [HandleError(ExceptionType = typeof(DbUpdateException), View = "DeleteError")]
         [HttpPost, ActionName("Delete")]

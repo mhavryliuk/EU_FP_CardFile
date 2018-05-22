@@ -7,6 +7,7 @@ using CardFile.Models;
 
 namespace CardFile.Controllers
 {
+    [Authorize]
     public class UsersController : Controller
     {
         private readonly CardFileContext db = new CardFileContext();

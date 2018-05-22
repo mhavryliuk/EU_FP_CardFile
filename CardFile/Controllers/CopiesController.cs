@@ -95,6 +95,7 @@ namespace CardFile.Controllers
         }
 
         // GET: Copies/Delete/5
+        [Authorize]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -110,6 +111,7 @@ namespace CardFile.Controllers
         }
 
         // POST: Copies/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
