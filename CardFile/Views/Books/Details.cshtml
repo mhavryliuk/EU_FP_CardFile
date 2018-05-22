@@ -1,0 +1,75 @@
+﻿@model CardFile.Models.Book
+
+@{
+    ViewBag.Title = "Аннотация";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Описание книги</h2>
+
+<div>
+    <h4>Данная страница содержит детальную информацию о книге.</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BookTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookAuthor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookAuthor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookCoAuthors)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookCoAuthors)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Publisher)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Publisher)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YearPublication)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearPublication)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PageCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PageCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редактировать книгу", "Edit", new { id = Model.BookId })<br />
+    @Html.ActionLink("Вернуться к каталогу книг", "Index")
+</p>

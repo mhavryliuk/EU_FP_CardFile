@@ -1,0 +1,56 @@
+﻿@model CardFile.Models.Copy
+
+@{
+    ViewBag.Title = "Возврат книги";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Оформления возврата книги</h2>
+
+<h4>Вы проверили целостность книги перед приемом?</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Book.BookTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book.BookTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BegDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BegDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Принять книгу" class="btn btn-default" /> |
+            @Html.ActionLink("Вернуться к списку выданных книг", "Index")
+        </div>
+    }
+</div>

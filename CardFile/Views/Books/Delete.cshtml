@@ -1,0 +1,81 @@
+﻿@model CardFile.Models.Book
+
+@{
+    ViewBag.Title = "Удаление книги";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Удаление книги</h2>
+
+<h4>Вы действительно хотите удалить эту книгу?</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BookTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookAuthor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookAuthor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookCoAuthors)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookCoAuthors)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Publisher)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Publisher)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YearPublication)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YearPublication)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PageCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PageCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Вернуться к каталогу книг", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,51 @@
+﻿@model CardFile.Models.Copy
+
+@{
+    ViewBag.Title = "Карточка экземпляра";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Карточка выданной книги</h2>
+
+<div>
+    <h4>Данная страница содержит детальную информацию о выданной книге.</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Book.BookTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book.BookTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BegDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BegDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редактировать информацию о выданной книге", "Edit", new { id = Model.CopyId })<br />
+    @Html.ActionLink("Вернуться к списку выданных книг", "Index")
+</p>

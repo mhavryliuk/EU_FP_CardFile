@@ -1,0 +1,51 @@
+﻿@model CardFile.Models.User
+
+@{
+    ViewBag.Title = "Карточка читателя";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Карточка читателя</h2>
+
+<div>
+    <h4>Данная страница содержит персональную информацию о читателе.</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Birthday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Birthday)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HomeAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HomeAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HomePhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HomePhone)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редактировать карточку читателя", "Edit", new { id = Model.UserId })<br />
+    @Html.ActionLink("Вернуться к списку читателей", "Index")
+</p>

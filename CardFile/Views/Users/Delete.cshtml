@@ -1,0 +1,57 @@
+﻿@model CardFile.Models.User
+
+@{
+    ViewBag.Title = "Удаление карточки читателя";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Удаление карточки читателя</h2>
+
+<h4>Вы действительно хотите удалить карточку данного читателя?</h4>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Birthday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Birthday)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HomeAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HomeAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HomePhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HomePhone)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Вернуться к списку читателей", "Index")
+        </div>
+    }
+</div>

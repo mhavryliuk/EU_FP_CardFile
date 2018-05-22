@@ -1,0 +1,69 @@
+﻿@model IEnumerable<CardFile.Models.Book>
+
+@{
+    ViewBag.Title = "Каталог книг";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Каталог книг</h2>
+
+<p>
+    @Html.ActionLink("Добавить новую книгу", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BookTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookAuthor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookCoAuthors)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Publisher)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YearPublication)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PageCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookAuthor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookCoAuthors)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Publisher)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YearPublication)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PageCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.BookId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.BookId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.BookId })
+            </td>
+        </tr>
+    }
+</table>
