@@ -6,6 +6,7 @@ namespace CardFile.Models
 {
     // Required - поле обязательное для заполнения
     // Range - диапазон допустимых значений для поля ввода
+    // StringLength - допустимая длина слова для поля ввода
 
     public class Book
     {
@@ -18,12 +19,14 @@ namespace CardFile.Models
 
         [Display(Name = "Автор")]
         [Required(ErrorMessage = "Поле Автор обязательно для заполнения")]
+        [StringLength(20, MinimumLength = 5, ErrorMessage = "Поле может вмещать от 3 до 15 символов")]
         public string BookAuthor { get; set; }        // Автор книги
 
         [Display(Name = "Соавторы")]
         public string BookCoAuthors { get; set; }     // Соавторы книги
 
         [Display(Name = "Издательство")]
+        [StringLength(25, ErrorMessage = "Название издательства не может привышать 25 символов")]
         public string Publisher { get; set; }         // Издательство
 
         [Display(Name = "Год издания")]
